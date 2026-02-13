@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <h1>Vehicle Price Predictor</h1>
+            <p class="subtitle">Estimate the market value of your car instantly.</p>
+            
+            <form id="predictionForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="Year">Year</label>
+                        <input type="number" id="Year" name="Year" required min="1990" max="2025" placeholder="e.g., 2015">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Present_Price">Present Showroom Price (in Lakhs)</label>
+                        <input type="number" id="Present_Price" name="Present_Price" required step="0.01" placeholder="e.g., 5.59">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Kms_Driven">Kilometers Driven</label>
+                        <input type="number" id="Kms_Driven" name="Kms_Driven" required placeholder="e.g., 27000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Owner">Previous Owners</label>
+                        <select id="Owner" name="Owner">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Fuel_Type">Fuel Type</label>
+                        <select id="Fuel_Type" name="Fuel_Type">
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="CNG">CNG</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Seller_Type">Seller Type</label>
+                        <select id="Seller_Type" name="Seller_Type">
+                            <option value="Dealer">Dealer</option>
+                            <option value="Individual">Individual</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="Transmission">Transmission</label>
+                        <select id="Transmission" name="Transmission">
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-predict">Predict Price</button>
+            </form>
+            
+            <div id="result" class="result-container hidden">
+                <h2>Estimated Price</h2>
+                <div class="price-tag">₹ <span id="predictionValue">0.00</span> Lakhs</div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
