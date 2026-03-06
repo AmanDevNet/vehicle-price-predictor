@@ -25,11 +25,14 @@ This project is designed to be simple and automated. You do **not** need to manu
 ### Installation
 
 1.  **Clone the repository** (if applicable) or download the project files.
-2.  **Navigate to the project directory**:
+    ```bash
+    git clone https://github.com/AmanDevNet/vehicle-price-predictor.git
+    ```
+3.  **Navigate to the project directory**:
     ```bash
     cd vehicle-price-prediction
     ```
-3.  **Install dependencies**:
+4.  **Install dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
